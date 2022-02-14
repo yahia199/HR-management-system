@@ -11,7 +11,7 @@ function Employees(EmployeeID, Fullname, Department, Level, Image, ){
 }
 
 Employees.prototype.random = function getRandomArsalary(min, max) {
-     this.Salary= (Math.random() * (max - min) + min)*0.75;
+     this.Salary= (Math.random() * (max - min) + min)-((Math.random() * (max - min) + min)*.075);
      return this.Salary;
 
   }
