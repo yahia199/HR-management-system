@@ -15,9 +15,43 @@
         </nav>
 
     </header>
-    <main>
-        <script src="/js/constructor.js"></script>
+    <main id="mainSection">
+        <fieldset>
+            <legend>Type your information</legend>
+      <form action="" id="dataform">
 
+       <label for="Employee" id="Employee">Employee ID: </label> 
+          <input type="text" name="Employee" id="Employee">
+           <br>
+          <label for="Fullname" id="fullname">Fullname: </label>
+          <input type="select" name="Fullname" id="Fullname">
+          <br>
+          <label for="Department">Department: </label>
+          <select name="Department" id="Department">
+              <option value="Finance">Finance</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Administration">Administration</option>
+              <option value="Development">Development</option>
+
+          </select>
+          <br>
+          <label for="level">level: </label>
+          <select name="level" id="level">
+          <option value="Senior">Senior</option>
+          <option value="Med-Senior">Med-Senior</option>
+          <option value="Junior">Junior</option>
+        
+          </select>
+          <br>
+          <label for="image">image URL: </label>
+          <input type="text" name="image" id="image">
+          <br>
+          <input type="submit" name="submit" id="submit">
+
+
+
+      </form>
+    </fieldset>
         
     </main>
     <footer>
@@ -25,5 +59,6 @@
             <h5>@Copyright</h5>
 
     </footer>
+    <script src="/js/constructor.js"></script>
 </body>
 </html>
