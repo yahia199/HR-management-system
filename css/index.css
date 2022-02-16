@@ -1,39 +1,39 @@
-body{
-    width: 960px;
-    margin: auto;
-    background-color: rgb(244, 248, 248);
+body {
+  width: 960px;
+  margin: auto;
+  background-color: rgb(244, 248, 248);
 }
-header{
-    display: flex;
-    align-items: center;
-    height: 80px;
+header {
+  display: flex;
+  align-items: center;
+  height: 80px;
 }
 
-header nav a{
-    padding: 10px 20px;
-    font-size: 15px;
+header nav a {
+  padding: 10px 20px;
+  font-size: 15px;
 }
-nav{
-    background-color: rgb(93, 190, 235);
-    padding-inline-start: 500px;
+nav {
+  background-color: rgb(93, 190, 235);
+  padding-inline-start: 500px;
 }
-header nav a:hover{
-    color: brown;
+header nav a:hover {
+  color: brown;
 }
-main{
-    padding-top: 100px;
+main {
+  padding-top: 100px;
 }
-footer{
+footer {
   background-color: darkgray;
 }
-h4{
+h4 {
   padding-top: 10px;
   margin-left: 400px;
   display: flex;
   align-items: center;
 }
-h5{
+h5 {
   margin-left: 450px;
   display: flex;
-  align-items: center; 
+  align-items: center;
 }
