@@ -114,6 +114,31 @@ let hadiAhmad = new Employees(
   "./assest/Hadi.JPG"
 );
 
+function saveEmployees() {
+  let formatedData = JSON.stringify(employess);
+  localStorage.setItem("employees", formatedData);
+  console.log(employess);
+}
+
+function gitData() {
+  let employess = localStorage.getItem("employees");
+  let parseEmployess = JSON.parse(employess);
+
+  employess = [];
+
+  if (parseEmployess != null) {
+    for (let i = 0; i < parseEmployess.length; i++) {
+      new Employees(
+        parseEmployess[i].Fullname,
+        parseEmployess[i].Department,
+        parseEmployess[i].Level,
+        parseEmployess[i].imageURL
+      );
+    }
+  }
+  renderAll();
+}
+
 form.addEventListener("submit", handlsubmit);
 
 function handlsubmit(event) {
@@ -126,6 +151,7 @@ function handlsubmit(event) {
   let newEmployee = new Employees(Fullname, Department, level, image);
   newEmployee.render();
   renderAll();
+  saveEmployees();
 }
 
 function renderAll() {
@@ -136,6 +162,7 @@ function renderAll() {
     employess[i].render();
   }
 }
+gitData();
 
-renderAll();
+//renderAll();
 console.log(employess);
