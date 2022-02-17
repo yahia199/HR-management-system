@@ -9,7 +9,7 @@ fullname.addEventListener("mouseover", function () {
   fullname.style.color = "red";
 });
 
-let employeeDiv = document.getElementById("employeeDiv");
+let allEmployess = document.getElementById("employeeDiv");
 let employeeIdStart = 1000;
 
 var employess = [];
@@ -58,11 +58,19 @@ function getRandomArsalary(min, max) {
 Employees.prototype.render = function () {
   let imageEmp = document.createElement("img");
   imageEmp.setAttribute("src", this.imageURL);
-  employeeDiv.appendChild(imageEmp);
+  allEmployess.appendChild(imageEmp);
+  imageEmp.className = "imageEmp";
 
   let title = document.createElement("h1");
-  title.textContent = this.EmployeeID + this.Fullname + this.Salary;
-  employeeDiv.appendChild(title);
+  title.textContent =
+    "Employee ID : " +
+    this.EmployeeID +
+    "              Full Name : " +
+    this.Fullname +
+    "               Salary : " +
+    this.Salary;
+  allEmployess.appendChild(title);
+  title.className = "title";
 };
 
 let lanaAli = new Employees(
@@ -123,10 +131,10 @@ function saveEmployees() {
 function gitData() {
   let employess = localStorage.getItem("employees");
   let parseEmployess = JSON.parse(employess);
-
-  employess = [];
+  console.log(employess);
 
   if (parseEmployess != null) {
+    employess = [];
     for (let i = 0; i < parseEmployess.length; i++) {
       new Employees(
         parseEmployess[i].Fullname,
@@ -136,7 +144,7 @@ function gitData() {
       );
     }
   }
-  renderAll();
+  //renderAll();
 }
 
 form.addEventListener("submit", handlsubmit);
@@ -155,14 +163,14 @@ function handlsubmit(event) {
 }
 
 function renderAll() {
-  employeeDiv.innerHTML = "";
+  allEmployess.innerHTML = "";
   for (var i = 0; i < employess.length; i++) {
     employess[i].getId();
     employess[i].getSalary();
     employess[i].render();
   }
 }
-gitData();
 
-//renderAll();
+renderAll();
+gitData();
 console.log(employess);
